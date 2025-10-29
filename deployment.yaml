@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internalapp-deployment
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: internalapp
+    spec:
+      containers:
+      - name: internalapp
+        image: vaishnavikarra/kubeapp:latest
+
+        ports:
+        - containerPort: 5001
+
+
